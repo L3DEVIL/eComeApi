@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            background-color: #f4f7fa;
+            font-size: 100%;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #2d3a3f;
+            color: #fff;
+            padding-left: 5px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .sidebar h2 {
+            color: #fcfbff;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            color: #6f8d94;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            flex-grow: 1;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        .header {
+            background-color: #344955;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            top: 0;
+            z-index: 1;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #344955;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 30px;
+            color: #151764;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        .api-endpoint {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .api-endpoint h4 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .api-endpoint pre {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        .api-endpoint .method {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .api-endpoint .url {
+            color: #007bff;
+        }
+
+        .footer {
+            background-color: #344955;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-250px);
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .header {
+                padding: 10px;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                position: absolute;
+                top: 10px;
+                left: 20px;
+                z-index: 2;
+            }
+
+            .hamburger div {
+                width: 30px;
+                height: 5px;
+                background-color: #fff;
+                margin: 5px 0;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .content.active {
+                margin-left: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <h2>eCommerce REST API Documentation</h2>
+        <ul>
+            <li><a href="#team">Team Information</a></li>
+            <li><a href="#intro">Project Introduction</a></li>
+            <li><a href="#Technologyused">Technology used</a></li>
+            <li><a href="#Roadmap">Roadmap</a></li>
+            <li><a href="#FeaturesoftheProject">Features of the Project</a></li>
+            <li><a href="#FeatureSolutions">Feature Solutions</a></li>
+            <li><a href="#TestCases">Test Cases</a></li>
+            <li><a href="#ProjectReview">Project Review</a></li>
+            <li><a href="#Conclusion">Conclusion</a></li>
+                <li><a href="#Reference">Reference</a></li>
+        </ul>
+    </div>
+
+    <div class="content" id="content">
+
+        <div class="header">
+            <!-- <h1>API Documentation</h1> -->
+            <h1 style="color: #2a9d8f; font-weight: bold;">INDUSTRIAL TRAINING</h1>
+            <p>At <strong style="color: #e76f51;">WebGuru InfoSystem Pvt</strong></p>
+            <p style="color: #fff;">BRAINWARE UNIVERSITY<br>Diploma in Computer Science and Engineering</p>
+        </div>
+
+        <section id="team">
+            <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Roll Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sourav Sharma</td>
+                        <td>BWU/DCS/22/119</td>
+                    </tr>
+                    <tr>
+                        <td>Rajankita Saha</td>
+                        <td>BWU/DCS/22/108</td>
+                    </tr>
+                    <tr>
+                        <td>Subhayan Mandal</td>
+                        <td>BWU/DCS/22/131</td>
+                    </tr>
+                    <tr>
+                        <td>Swagata Das</td>
+                        <td>BWU/DCS/22/092</td>
+                    </tr>
+                    <tr>
+                        <td>Kartik Paul</td>
+                        <td>BWU/DCS/22/062</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        
+
+        <section id="intro">
+            <h1 style="margin-top: 5px;">eCommerce REST API</h1>
+            <p>This REST API is built using Node.js and Express.js to facilitate eCommerce functionalities such as user authentication, product management, review management, and order management. It allows users to register, log in, manage products, create and manage reviews, and place and manage orders. JWT-based authentication ensures secure access to the system.</p>
+        </section>
+
+        <section id="github" style="text-align: center; margin: 40px 0;">
+            <h2 style="font-size: 24px; color: #333;">Source Code</h2>
+            <p style="font-size: 18px; color: #666;">Access the source code for this project on GitHub:</p>
+            <a href="https://github.com/L3DEVIL/eComeApi.git" target="_blank" style="text-decoration: none;">
+                <button style="background-color: #333; color: white; padding: 10px 20px; font-size: 16px; border: none; cursor: pointer; border-radius: 5px; display: inline-flex; align-items: center;">
+                    <i class="fab fa-github" style="margin-right: 8px;"></i> View on GitHub
+                </button>
+            </a>
+        </section>
+        
+        
+
+        <section id="Technologyused">
+            <h2>Technology Used</h2>
+            <ul>
+                <li><strong>Backend</strong>: Node.js, Express.js</li>
+                <li><strong>Database</strong>: MongoDB, Mongoose</li>
+                <li><strong>Authentication</strong>: JWT (JSON Web Tokens)</li>
+                <li><strong>Image Upload</strong>: Cloudinary API</li>
+                <li><strong>Environment Management</strong>: dotenv for environment variable management</li>
+            </ul>
+        </section>
+
+        <section id="Roadmap">
+            <h2>Roadmap</h2>
+            <ul>
+                <li>User Authentication - Secure user registration, login, and logout with JWT.</li>
+                <li>Product Management - CRUD operations for products, including image uploads.</li>
+                <li>Review Management - Manage product reviews with CRUD operations.</li>
+                <li>Order Management - Create, update, and retrieve orders.</li>
+                <li>API Testing - Ensure robustness and security with unit and integration tests.</li>
+                <li>Deployment - Deploy the API on cloud platforms like Heroku or AWS.</li>
+                <li>Future Enhancements - Adding features like payment gateway integration, order history, and advanced user roles.</li>
+            </ul>
+        </section>
+
+        <section id="FeaturesoftheProject">
+            <h2>Features of the Project</h2>
+            <ul>
+                <li><strong>User Registration and Authentication</strong>: Users can register, log in, and securely authenticate via JWT.</li>
+                <li><strong>Product CRUD</strong>: Create, update, delete, and retrieve product details, including image uploads.</li>
+                <li><strong>Review Management</strong>: Allow users to create, update, delete, and retrieve reviews for products.</li>
+                <li><strong>Order Management</strong>: Users can place, update, and retrieve orders.</li>
+                <li><strong>JWT-based Authentication</strong>: Secure access for users with token-based authentication.</li>
+            </ul>
+        </section>
+
+        <section id="FeaturesoftheProject">
+            <h2>Features of the Project</h2>
+            <ul>
+                <li><strong>User Registration and Authentication</strong>: Users can register, log in, and securely authenticate via JWT.</li>
+                <li><strong>Product CRUD</strong>: Create, update, delete, and retrieve product details, including image uploads.</li>
+                <li><strong>Review Management</strong>: Allow users to create, update, delete, and retrieve reviews for products.</li>
+                <li><strong>Order Management</strong>: Users can place, update, and retrieve orders.</li>
+                <li><strong>JWT-based Authentication</strong>: Secure access for users with token-based authentication.</li>
+            </ul>
+        </section>
+
+        <section id="FeatureSolutions">
+            <h2>Feature Solutions</h2>
+            <p>We provide tailored solutions to meet specific needs, ensuring enhanced functionality, performance, and user experience. Key features include:</p>
+            <ul>
+                <li><strong>Customization</strong>: Tailor features to meet unique business or user requirements.</li>
+                <li><strong>Scalability</strong>: Support for future growth and expansion with seamless integration.</li>
+                <li><strong>Security</strong>: Robust security protocols to protect data and ensure safe transactions.</li>
+                <li><strong>User-Friendly Interface</strong>: Intuitive design for improved user engagement.</li>
+                <li><strong>Real-Time Performance</strong>: Fast, efficient solutions for real-time data processing.</li>
+            </ul>
+        </section>       
+
+
+        <section id="TestCases">
+            <h2>Test Cases</h2>
+            
+            <!-- User Authentication Tests -->
+            <h3>1. User Authentication Tests</h3>
+        
+            <h4>Test Case 1.1: User Registration</h4>
+            <p>Send a POST request to <code>/register</code> with valid user details (e.g., email, password).</p>
+            <pre>
+            Input:
+            {
+              "email": "user@example.com",
+              "password": "password123"
+            }
+            </pre>
+            <p>Expected Result:</p>
+            <ul>
+              <li>Response status: 201 (Created)</li>
+              <li>Response message: "User successfully registered."</li>
+              <li>User added to the database.</li>
+            </ul>
+        
+            <h4>Test Case 1.2: User Registration (Missing Fields)</h4>
+            <p>Send a POST request to <code>/register</code> with missing fields (e.g., missing password).</p>
+            <pre>
+            Input:
+            {
+              "email": "user@example.com"
+            }
+            </pre>
+            <p>Expected Result:</p>
+            <ul>
+              <li>Response status: 400 (Bad Request)</li>
+              <li>Error message: "Password is required."</li>
+            </ul>
+        
+            <h4>Test Case 1.3: User Login</h4>
+            <p>Send a POST request to <code>/login</code> with valid credentials (email and password).</p>
+            <pre>
+            Input:
+            {
+              "email": "user@example.com",
+              "password": "password123"
+            }
+            </pre>
+            <p>Expected Result:</p>
+            <ul>
+              <li>Response status: 200 (OK)</li>
+              <li>Response includes a JWT token for authentication.</li>
+            </ul>
+        
+            <h4>Test Case 1.4: User Login (Invalid Credentials)</h4>
+            <p>Send a POST request to <code>/login</code> with invalid credentials.</p>
+            <pre>
+            Input:
+            {
+              "email": "user@example.com",
+              "password": "wrongpassword"
+            }
+            </pre>
+            <p>Expected Result:</p>
+            <ul>
+              <li>Response status: 401 (Unauthorized)</li>
+              <li>Error message: "Invalid email or password."</li>
+            </ul>
+        
+            <!-- Product Management Tests -->
+            <h3>2. Product Management Tests</h3>
+        
+            <h4>Test Case 2.1: Add Product (Admin)</h4>
+            <p>Send a POST request to <code>/products</code> to add a new product with valid data (only accessible by admin).</p>
+            <pre>
+            Input:
+            {
+              "name": "Laptop",
+              "price": 1200,
+              "category": "Electronics",
+              "description": "High-end gaming laptop"
+            }
+            </pre>
+            <p>Expected Result:</p>
+            <ul>
+              <li>Response status: 201 (Created)</li>
+              <li>Response includes the product details.</li>
+              <li>Product added to the database.</li>
+            </ul>
+        
+            <h4>Test Case 2.2: Add Product (Without Admin Privileges)</h4>
+            <p>Send a POST request to <code>/products</code> to add a new product without admin privileges.</p>
+            <pre>
+            Input:
+            {
+              "name": "Phone",
+              "price": 500,
+              "category": "Electronics"
+            }
+            </pre>
+            <p>Expected Result:</p>
+            <ul>
+              <li>Response status: 403 (Forbidden)</li>
+              <li>Error message: "Admin privileges required."</li>
+            </ul>
+        
+            <h4>Test Case 2.3: Get Product List</h4>
+            <p>Send a GET request to <code>/products</code> to retrieve the list of products.</p>
+            <pre>
+            Input: No input required.
+            </pre>
+            <p>Expected Result:</p>
+            <ul>
+              <li>Response status: 200 (OK)</li>
+              <li>Response includes an array of products with details like name, price, and category.</li>
+            </ul>
+        
+            <!-- Review Management Tests -->
+            <h3>3. Review Management Tests</h3>
+        
+            <h4>Test Case 3.1: Add Product Review</h4>
+            <p>Send a POST request to <code>/reviews</code> to add a review for a product.</p>
+            <pre>
+            Input:
+            {
+              "productId": 1,
+              "rating": 5,
+              "review": "Great product!"
+            }
+            </pre>
+            <p>Expected Result:</p>
+            <ul>
+              <li>Response status: 201 (Created)</li>
+              <li>Response includes the review details.</li>
+            </ul>
+        
+            <h4>Test Case 3.2: Get Product Reviews</h4>
+            <p>Send a GET request to <code>/reviews?productId=1</code> to retrieve all reviews for a product.</p>
+            <pre>
+            Input: No input required.
+            </pre>
+            <p>Expected Result:</p>
+            <ul>
+              <li>Response status: 200 (OK)</li>
+              <li>Response includes a list of reviews for the product.</li>
+            </ul>
+        </section>        
+
+        <section id="error-codes">
+            <h2>Error Codes</h2>
+            <p>The following are the possible error codes returned by the API:</p>
+            <ul>
+                <li><strong>400</strong> - Bad Request</li>
+                <li><strong>401</strong> - Unauthorized</li>
+                <li><strong>404</strong> - Not Found</li>
+                <li><strong>500</strong> - Internal Server Error</li>
+            </ul>
+        </section>
+
+
+        <section id="ProjectReview">
+            <h2>Project Review</h2>
+            
+            <h3>Overview</h3>
+            <p>This eCommerce REST API is built using Node.js and Express.js to provide essential functionalities for an online store. It focuses on user authentication, product management, review management, and order management. The system leverages JWT-based authentication to ensure secure access and facilitate smooth user interactions. This API is designed to manage users, products, reviews, and orders efficiently, with roles and permissions to secure sensitive operations.</p>
+        
+            <h3>Strengths</h3>
+            <ul>
+                <li><strong>Scalability:</strong> The REST API is designed to be scalable, making it suitable for handling a growing number of products, users, and orders.</li>
+                <li><strong>Security:</strong> JWT authentication ensures that only authorized users can access and perform actions in the system.</li>
+                <li><strong>User-Centric:</strong> Provides an intuitive user interface for product browsing, reviews, and order management.</li>
+                <li><strong>Efficient Management:</strong> Simplifies product and review management for administrators, providing a secure and structured way to manage data.</li>
+            </ul>
+        
+            <h3>Challenges</h3>
+            <ul>
+                <li><strong>Error Handling:</strong> Improved error handling and clear responses for invalid requests can be implemented for better user experience.</li>
+                <li><strong>Rate Limiting:</strong> To prevent abuse of the system, implementing rate limiting for API requests could enhance security and reduce the risk of DDoS attacks.</li>
+                <li><strong>Extensibility:</strong> Further features like payment gateway integration and shipment tracking could be considered in future updates.</li>
+            </ul>
+        
+            <h3>Future Enhancements</h3>
+            <ul>
+                <li><strong>Payment Integration:</strong> Adding a payment gateway (e.g., PayPal, Stripe) for handling transactions.</li>
+                <li><strong>Inventory Management:</strong> Integrating real-time stock tracking and alerts for low stock levels.</li>
+                <li><strong>Mobile App Integration:</strong> Building a mobile app that interacts with the API to provide a seamless shopping experience on smartphones.</li>
+                <li><strong>Product Search and Filter:</strong> Implementing advanced search and filter functionality for products based on various criteria like price range, category, and ratings.</li>
+            </ul>
+        </section>
+        
+
+        <section id="Conclusion">
+            <h2>Conclusion</h2>
+            <p>This eCommerce REST API built using Node.js and Express.js offers a secure, scalable, and efficient solution for managing users, products, reviews, and orders. By implementing JWT authentication, it ensures secure access to the system. While the project successfully meets the essential eCommerce requirements, there is room for future enhancements, such as adding payment gateway integrations, inventory management, and mobile app support. Overall, the system lays a solid foundation for building a robust online store, and its flexibility allows for future growth and improvements.</p>
+        </section>
+        
+        <section id="Reference">
+            <h2>Reference</h2>
+            <ul>
+                <li><a href="https://expressjs.com/">Express.js Official Documentation</a></li>
+                <li><a href="https://jwt.io/introduction/">JWT Official Introduction</a></li>
+                <li><a href="https://www.mongodb.com/">MongoDB Official Website</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">JavaScript Modules - MDN Web Docs</a></li>
+                <li><a href="https://www.postman.com/">Postman API Testing Tool</a></li>
+                <li><a href="https://www.digitalocean.com/community/tutorials">DigitalOcean Tutorials</a></li>
+                <li><a href="https://www.w3schools.com/">W3Schools - Web Development Tutorials</a></li>
+            </ul>
+        </section>
+        
+
+
+        <div class="footer">
+            <p>© 2025 API Documentation. All Rights Reserved.</p>
+            <p>Created by: Sourav Sharma, Rajankita Saha, Subhayan Mandal, Swagata Das, Kartik Paul</p>
+        </div>
+        
+    </div>
+
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <script>
+        // Toggle Sidebar
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+        const hamburger = document.getElementById('hamburger');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            content.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
